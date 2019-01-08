@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group 'org.hww'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(':annotations')
+    compile project(':compiler')
+}
+
+

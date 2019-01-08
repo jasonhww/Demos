@@ -1,0 +1,5 @@
+rootProject.name = 'TampJavaDemo'
+include 'annotations'
+include 'compiler'
+include 'annotations'
+
