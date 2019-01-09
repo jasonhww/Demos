@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     publishProgress(i);
                     if (isCancelled()) {
                         break;
-                    } else {
+                    } else if (i == 10) {
                         robot = new Robot("i", strings[0]);
                     }
                 }
