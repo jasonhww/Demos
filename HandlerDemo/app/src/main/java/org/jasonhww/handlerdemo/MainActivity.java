@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
-     * 使用自定义Thread
+     * 使用自定义Thread使用Handler
      */
     private void doSub() {
         mSubThread = new SubThread("SubThread");
@@ -70,6 +70,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         handler2.sendEmptyMessage(what);
     }
 
+    /**
+     * 在主线程中使用Handler
+     */
     private void doMainSendMsg() {
         mHandler.sendEmptyMessage(what);
     }
