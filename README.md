@@ -1,6 +1,7 @@
 # Demos
 * DesignModeDemo - 设计模式示例
 * EventBusDemo - EventBus示例
+* HandlerDemo - Handler示例
 * IdeaPluginDemo - 插件示例
 * MyAndroidThreadStatusDemo - Android中线程状态示例
 * OkHttpDemo - OkHttp示例
