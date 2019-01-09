@@ -3,9 +3,9 @@ package org.jasonhww.myandroidthreadstatusdemo;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.AsyncTask;
-import android.os.Bundle;
+import android.os.*;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,11 +14,12 @@ import org.jasonhww.myandroidthreadstatusdemo.intentserviceDm.MyIntentService;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
+    private static final String TAG = "MainActivity";
     private ProgressDialog mProgressDialog;
     private TextView tvName;
-    private Button btnDoAsync, btnDoIService, btnCancel;
+    private Button btnCancel, btnDoAsync, btnDoIService, btnDoIHandlerThread;
     private MyAsyncTask mMyAsyncTask;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnCancel = findViewById(R.id.btnCancel);
         btnDoAsync = findViewById(R.id.btnDoAsync);
         btnDoIService = findViewById(R.id.btnDoIService);
-
+        btnDoIHandlerThread = findViewById(R.id.btnDoIHandlerThread);
         initListener();
     }
 
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnCancel.setOnClickListener(this);
         btnDoAsync.setOnClickListener(this);
         btnDoIService.setOnClickListener(this);
+        btnDoIHandlerThread.setOnClickListener(this);
     }
 
     private void doAsync() {
@@ -48,12 +50,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mMyAsyncTask.execute("jasonhww");
     }
 
+    /**
+     * 使用HandlerThread
+     */
+    private void doHandlerThread() {
+        HandlerThread handlerThread = new HandlerThread("handlerThread");
+        handlerThread.start();
+        final Handler handler = new Handler(handlerThread.getLooper(), new Handler.Callback() {
+            @Override
+            public boolean handleMessage(Message msg) {
+                Log.d(TAG, "handleMessage: " + Thread.currentThread().getName());
+                return false;
+            }
+        });
+        handler.sendEmptyMessage(0);
+    }
+
+    /**
+     * 使用IntentService
+     */
     private void doIntentService() {
         //连续开三个服务测试
         Intent intent = new Intent(this, MyIntentService.class);
         intent.putExtra("taskName", "org.jason.taskOne");
         startService(intent);
-        intent.putExtra("taskName", "org.jason.taskTw0");
+        intent.putExtra("taskName", "org.jason.taskTwo");
         startService(intent);
         intent.putExtra("taskName", "org.jason.taskThree");
         startService(intent);
@@ -70,6 +91,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnDoIService:
                 doIntentService();
+                break;
+            case R.id.btnDoIHandlerThread:
+                doHandlerThread();
                 break;
             default:
                 break;

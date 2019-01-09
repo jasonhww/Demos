@@ -17,24 +17,37 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <Button
+                android:text="doAsync"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnDoAsync"/>
+
+        <Button
+                android:text="取消任务"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnCancel"/>
+    </LinearLayout>
+
     <Button
-            android:text="取消任务"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" tools:layout_editor_absoluteY="383dp"
-            tools:layout_editor_absoluteX="148dp" android:id="@+id/btnCancel"/>
-    <Button
-            android:text="doAsync"
+            android:text="doIHandlerThread"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="135dp" android:id="@+id/btnDoAsync"
-            app:layout_constraintBottom_toTopOf="@+id/tvName" android:layout_marginBottom="168dp"/>
+            android:id="@+id/btnDoIHandlerThread"/>
+
     <Button
-            android:text="doIService"
+            android:text="doIIntentService"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnDoIService"
-            app:layout_constraintBottom_toBottomOf="@+id/tvName" app:layout_constraintStart_toEndOf="@+id/btnDoAsync"
-            android:layout_marginBottom="84dp" android:layout_marginStart="4dp"/>
+            android:id="@+id/btnDoIService"/>
 
 
 </LinearLayout>

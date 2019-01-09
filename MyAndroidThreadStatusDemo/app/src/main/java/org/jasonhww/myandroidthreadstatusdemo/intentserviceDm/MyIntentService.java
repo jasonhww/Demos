@@ -16,23 +16,23 @@ public class MyIntentService extends IntentService {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.d(TAG, "onCreate-->currentThread: "+Thread.currentThread().getName());
+        Log.d(TAG, "onCreate-->currentThread: " + Thread.currentThread().getName());
     }
 
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
-        Log.d(TAG, "onHandleIntent-->currentThread: "+Thread.currentThread().getName());
+        Log.d(TAG, "onHandleIntent-->currentThread: " + Thread.currentThread().getName());
         String taskName = intent.getStringExtra("taskName");
         Log.d(TAG, "taskName: " + taskName);
         SystemClock.sleep(2500);
-        if ("org.jason.taskOne".equals(taskName)){
-            Log.d(TAG, "do task: "+taskName);
+        if ("org.jason.taskOne".equals(taskName)) {
+            Log.d(TAG, "do task: " + taskName);
         }
     }
 
     @Override
     public void onDestroy() {
-        Log.d(TAG, "onDestroy-->currentThread: "+Thread.currentThread().getName());
+        Log.d(TAG, "onDestroy-->currentThread: " + Thread.currentThread().getName());
         super.onDestroy();
     }
 }
