@@ -12,7 +12,9 @@ import android.widget.TextView;
 import org.jasonhww.myandroidthreadstatusdemo.asynctaskDm.Robot;
 import org.jasonhww.myandroidthreadstatusdemo.intentserviceDm.MyIntentService;
 
-
+/**
+ * Android中的多线程示例
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "MainActivity";
     private ProgressDialog mProgressDialog;
@@ -45,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDoIHandlerThread.setOnClickListener(this);
     }
 
+    /**
+     * 使用AsyncTask
+     */
     private void doAsync() {
         mMyAsyncTask = new MyAsyncTask();
         mMyAsyncTask.execute("jasonhww");
@@ -100,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    //-------------------------------------------------AsyncTask------------------------------------------
     class MyAsyncTask extends AsyncTask<String, Integer, Robot> {
 
 
