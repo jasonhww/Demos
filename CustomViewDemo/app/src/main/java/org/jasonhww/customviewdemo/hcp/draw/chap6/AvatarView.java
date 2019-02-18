@@ -1,4 +1,4 @@
-package org.jasonhww.customviewdemo.hcp.draw;
+package org.jasonhww.customviewdemo.hcp.draw.chap6;
 
 import android.content.Context;
 import android.graphics.*;
@@ -8,6 +8,10 @@ import android.view.View;
 import org.jasonhww.customviewdemo.R;
 import org.jasonhww.customviewdemo.hcp.draw.utils.Utils;
 
+/**
+ * 圆角图形
+ * xferModer的使用
+ */
 public class AvatarView extends View {
     private static final float WIDTH = Utils.dp2px(80);
     private static final float PADDING = Utils.dp2px(80);

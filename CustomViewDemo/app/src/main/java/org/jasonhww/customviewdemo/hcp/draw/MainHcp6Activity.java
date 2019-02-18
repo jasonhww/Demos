@@ -1,14 +1,14 @@
-package org.jasonhww.customviewdemo.hcp.draw.utils;
+package org.jasonhww.customviewdemo.hcp.draw;
 
 import android.app.Activity;
 import android.os.Bundle;
 import org.jasonhww.customviewdemo.R;
 
-public class MainDrawActivity extends Activity {
+public class MainHcp6Activity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_draw);
+        setContentView(R.layout.hcp_c6_activity_main_draw);
     }
 }

@@ -8,24 +8,24 @@
         tools:context=".MainActivity">
 
 
-    <org.jasonhww.customviewdemo.hcp.draw.Dashboard
+    <org.jasonhww.customviewdemo.hcp.draw.chap6.Dashboard
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="5dp"
             android:layout_weight="1"/>
 
-    <org.jasonhww.customviewdemo.hcp.draw.PieChart
+    <org.jasonhww.customviewdemo.hcp.draw.chap6.PieChart
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="5dp"
             android:layout_weight="1"/>
-    <org.jasonhww.customviewdemo.hcp.draw.AvatarView
+    <org.jasonhww.customviewdemo.hcp.draw.chap6.AvatarView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="5dp"
 
             android:layout_weight="1"/>
-    <org.jasonhww.customviewdemo.hcp.draw.SportsView
+    <org.jasonhww.customviewdemo.hcp.draw.chap6.SportsView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="5dp"

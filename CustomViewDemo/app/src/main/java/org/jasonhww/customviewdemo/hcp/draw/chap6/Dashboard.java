@@ -1,4 +1,4 @@
-package org.jasonhww.customviewdemo.hcp.draw;
+package org.jasonhww.customviewdemo.hcp.draw.chap6;
 
 import android.content.Context;
 import android.graphics.*;
@@ -7,7 +7,14 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import org.jasonhww.customviewdemo.hcp.draw.utils.Utils;
+//277023349 2849284105 15889774502
+//471375069
+// 1426571828 13711325479 3510777894
 
+/**
+ * 仪盘表
+ * paint效果相关以及三角函数的使用
+ */
 public class Dashboard extends View {
     private static final String TAG = "Dashboard";
 

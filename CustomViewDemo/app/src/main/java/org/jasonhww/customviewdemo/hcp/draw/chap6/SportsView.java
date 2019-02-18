@@ -1,4 +1,4 @@
-package org.jasonhww.customviewdemo.hcp.draw;
+package org.jasonhww.customviewdemo.hcp.draw.chap6;
 
 import android.content.Context;
 import android.graphics.*;
@@ -7,6 +7,10 @@ import android.util.AttributeSet;
 import android.view.View;
 import org.jasonhww.customviewdemo.hcp.draw.utils.Utils;
 
+/**
+ * 文字的绘制
+ * 三角函数的应用
+ */
 public class SportsView extends View {
     private static final String TAG = "SportsView";
     private static final float RING_WIDTH = Utils.dp2px(5);
@@ -53,7 +57,7 @@ public class SportsView extends View {
 
         paint.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "Quicksand-Regular.ttf"));
         //方式1.1:通过获取最小矩形计算出需要偏移的位置,这样可以非常居中.适合静态文字.
-       paint.getTextBounds("abab", 0, "abab".length(), bounds);
+        paint.getTextBounds("abab", 0, "abab".length(), bounds);
 //        paint.setTextAlign(Paint.Align.CENTER);
 //        float offset = (bounds.bottom - bounds.top) / 2;
 //        canvas.drawText("abcd", getWidth() / 2, getHeight() / 2 + offset, paint);
@@ -70,5 +74,13 @@ public class SportsView extends View {
 //        float offset = (fontMetrics.descent + fontMetrics.ascent) / 2;
 //        canvas.drawText("abcd", getWidth() / 2, getHeight() / 2 - offset, paint);
 
+        //默认字体之间会有间隔,采用以下方式对齐
+        // -bounds.left:左边完全对齐
+        // -boounds.top:顶部完全对齐
+        float spacing = paint.getFontSpacing();
+        paint.getTextBounds("abab", 0, "abab".length(), bounds);
+        canvas.drawText("abcd", -bounds.left, spacing, paint);
     }
+
+    //
 }

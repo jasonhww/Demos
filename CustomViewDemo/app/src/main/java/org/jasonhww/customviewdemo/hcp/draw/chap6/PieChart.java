@@ -1,4 +1,4 @@
-package org.jasonhww.customviewdemo.hcp.draw;
+package org.jasonhww.customviewdemo.hcp.draw.chap6;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -10,6 +10,9 @@ import android.util.AttributeSet;
 import android.view.View;
 import org.jasonhww.customviewdemo.hcp.draw.utils.Utils;
 
+/**
+ * 饼图
+ */
 public class PieChart extends View {
     private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private static final int RADIUS = (int) Utils.dp2px(80);
@@ -50,9 +53,10 @@ public class PieChart extends View {
             paint.setColor(colors[i]);
             canvas.save();
             if (PULLED_OUT_INDEX == i) {
+                float angle = currentAngles + (float) angles[i] / 2;//夹角度数
                 canvas.translate(
-                        (float) Math.cos(Math.toRadians(currentAngles + (float) angles[i] / 2)) * LENGTH,
-                        (float) Math.sin(Math.toRadians(currentAngles + (float) angles[i] / 2)) * LENGTH);
+                        (float) Math.cos(Math.toRadians(angle)) * LENGTH,
+                        (float) Math.sin(Math.toRadians(angle) * LENGTH));
             }
             canvas.drawArc(bounds, currentAngles, angles[i], true, paint);
             currentAngles += angles[i];

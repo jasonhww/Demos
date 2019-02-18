@@ -7,7 +7,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import org.jasonhww.customviewdemo.hcp.draw.utils.MainDrawActivity;
+import org.jasonhww.customviewdemo.hcp.draw.MainHcp6Activity;
+import org.jasonhww.customviewdemo.hcp.draw.MainHcpC7Activity;
+import org.jasonhww.customviewdemo.hcp.draw.MainHcpC8Activity;
 import org.jasonhww.customviewdemo.scroolmethod.ScrollActivity;
 
 import java.util.ArrayList;
@@ -17,8 +19,9 @@ public class MainActivity extends Activity {
 
     private MainActivity mMainActivity;
     private RecyclerView mRecycler;
-    private String[] titleArray = {"滑动的几种方式~1.1-1.4", "HCP自定义View的绘制"};
-    private Class[] activityArray = {ScrollActivity.class, MainDrawActivity.class};
+    private String[] titleArray = {"滑动的几种方式~1.1-1.4", "HCP自定义View的绘制", "CameraView", "MainHcpC8Activity"};
+    private Class[] activityArray = {
+            ScrollActivity.class, MainHcp6Activity.class, MainHcpC7Activity.class, MainHcpC8Activity.class};
     private MainAdapter mMainAdapter;
     private List<MainViewBean> mMainViewBeanList = new ArrayList<>();
 

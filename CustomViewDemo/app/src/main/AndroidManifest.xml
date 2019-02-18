@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".scroolmethod.ScrollActivity"/>
-        <activity android:name="org.jasonhww.customviewdemo.hcp.draw.utils.MainDrawActivity"/>
+        <activity android:name="org.jasonhww.customviewdemo.hcp.draw.MainHcp6Activity"/>
+        <activity android:name="org.jasonhww.customviewdemo.hcp.draw.MainHcpC7Activity"/>
+        <activity android:name="org.jasonhww.customviewdemo.hcp.draw.MainHcpC8Activity"/>
     </application>
 
 </manifest>
